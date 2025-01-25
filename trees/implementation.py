@@ -19,7 +19,7 @@ class BinarySearchTree:
             self._insert_recursive(self.root, key)
 
     def _insert_recursive(self, node, key):
-        print(node.key)
+        # print(node.key)
         if key < node.key:
             if node.left is None:
                 node.left = TreeNode(key)
