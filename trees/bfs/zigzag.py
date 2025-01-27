@@ -1,5 +1,5 @@
 from collections import deque
-from implementation import bst
+from DSA.trees.bfs.bfs_implementation import bst
 
 queue = deque()
 
@@ -9,7 +9,10 @@ while queue:
   qLen = len(queue)
   for i in range(qLen):
     node = queue.popleft()
-    print(node.key)
+    print('qLen ', qLen)
+    print('key ', node.key)
+    print('node.left ', node.left.key if node.left else None)
+    print('node.right ', node.right.key if node.right else None)
 
     if left:
       if node.left:
@@ -22,3 +25,5 @@ while queue:
         queue.append(node.right)
       if node.left:
         queue.append(node.left)
+
+  left = not left
